@@ -7,7 +7,7 @@
     <groupId>com.jd.cola</groupId>
     <artifactId>cola-component</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>cola-component-dto</module>
     </modules>
@@ -18,4 +18,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>JD maven2 repository-snapshots</name>
+            <url>http://artifactory.jd.com/libs-snapshots-local</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
