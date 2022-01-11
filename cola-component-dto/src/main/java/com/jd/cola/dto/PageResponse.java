@@ -13,7 +13,7 @@ public class PageResponse<T> extends Response {
     /**
      * 总条数
      */
-    private int totalCount = 0;
+    private long totalCount = 0;
 
     /**
      * 每页条数，默认为10
@@ -39,7 +39,7 @@ public class PageResponse<T> extends Response {
         return response;
     }
 
-    public static <T> PageResponse<T> ofSuccess(Collection<T> data, int pageIndex, int pageSize, int totalCount) {
+    public static <T> PageResponse<T> ofSuccess(Collection<T> data, int pageIndex, int pageSize, long totalCount) {
         PageResponse<T> response = new PageResponse<>();
         response.setSuccess(true);
         response.setData(data);
@@ -61,16 +61,11 @@ public class PageResponse<T> extends Response {
         return !isEmpty();
     }
 
-    public int getTotalPages() {
-        return this.totalCount % this.pageSize == 0 ? this.totalCount
-                / this.pageSize : (this.totalCount / this.pageSize) + 1;
-    }
-
-    public int getTotalCount() {
+    public long getTotalCount() {
         return totalCount;
     }
 
-    public PageResponse<T> setTotalCount(int totalCount) {
+    public PageResponse<T> setTotalCount(long totalCount) {
         this.totalCount = Math.max(totalCount, 0);
         return this;
     }
