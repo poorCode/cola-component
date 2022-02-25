@@ -1,12 +1,16 @@
 package com.jd.cola.dto;
 
+import java.io.Serializable;
+
 /**
  * 无数据响应
  *
  * @author deer
  * @date 2021-12-14
  */
-public class NonResponse extends Response {
+public class NonResponse extends Response implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     public static NonResponse ofSuccess() {
         NonResponse response = new NonResponse();
         response.setSuccess(true);

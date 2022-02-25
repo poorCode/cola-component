@@ -7,7 +7,6 @@ package com.jd.cola.dto;
  * @date 2021-12-13
  */
 public abstract class PageQuery implements Query {
-    private static final long serialVersionUID = 1L;
 
     /**
      * 升序标识
