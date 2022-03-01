@@ -1,8 +1,6 @@
 package com.jd.cola.dto;
 
-import java.io.Serializable;
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * 多条数据响应
@@ -10,9 +8,12 @@ import java.util.Collections;
  * @author deer
  * @date 2021-12-13
  */
-public class MultiResponse<T> extends Response implements Serializable {
+public class MultiResponse<T> extends Response {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * collection
+     */
     private Collection<T> data;
 
     public static <T> MultiResponse<T> ofSuccess() {

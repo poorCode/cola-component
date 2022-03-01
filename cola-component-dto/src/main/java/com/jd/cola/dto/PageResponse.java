@@ -1,6 +1,5 @@
 package com.jd.cola.dto;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 /**
@@ -9,7 +8,7 @@ import java.util.Collection;
  * @author deer
  * @date 2021-12-13
  */
-public class PageResponse<T> extends Response implements Serializable {
+public class PageResponse<T> extends Response {
     private static final long serialVersionUID = 1L;
     /**
      * 总条数

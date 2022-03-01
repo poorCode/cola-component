@@ -1,16 +1,17 @@
 package com.jd.cola.dto;
 
-import java.io.Serializable;
-
 /**
  * 单条数据响应
  *
  * @author deer
  * @date 2021-12-13
  */
-public class SingleResponse<T> extends Response implements Serializable {
+public class SingleResponse<T> extends Response {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 数据
+     */
     private T data;
 
     public static <T> SingleResponse<T> ofSuccess() {
